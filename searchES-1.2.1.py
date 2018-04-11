@@ -3,7 +3,7 @@
 import requests
 import json
 
-r= requests.post('http://10.100.64.229:9200/asa-*/_search?pretty=true', json={"size":100,"query":{"bool":{"must":{"match":{"geoip.country_name":"United"}}}}})
+r= requests.post('http://192.168.20.1:9200/asa-*/_search?pretty=true', json={"size":100,"query":{"bool":{"must":{"match":{"geoip.country_name":"United"}}}}})
 
 a=r.text.split('"')
 
