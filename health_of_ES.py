@@ -2,7 +2,7 @@
 
 from elasticsearch import Elasticsearch
 
-es=Elasticsearch(['x.x.x.x:x'])
+es=Elasticsearch(['192.168.20.1:9200'])
 
 r=es.cluster.health()
 
