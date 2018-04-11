@@ -1,0 +1,69 @@
+# Alert when the rate of events exceeds a threshold
+
+# (Optional)
+# Elasticsearch host
+# es_host: elasticsearch.example.com
+
+# (Optional)
+# Elasticsearch port
+# es_port: 14900
+
+# (OptionaL) Connect with SSL to Elasticsearch
+#use_ssl: True
+
+# (Optional) basic-auth username and password for Elasticsearch
+#es_username: someusername
+#es_password: somepassword
+
+# (Required)
+# Rule name, must be unique
+name: Example frequency rule
+
+# (Required)
+# Type of alert.
+# the frequency rule type alerts when num_events events occur with timeframe time
+type: frequency
+
+# (Required)
+# Index to search, wildcard supported
+index: asa-*
+
+# (Required, frequency specific)
+# Alert when this many documents matching the query occur within a timeframe
+num_events: 1
+# (Required, frequency specific)
+# num_events must occur within this amount of time to trigger an alert
+timeframe:
+  minutes: 50
+realert:
+  minutes: 0
+
+# (Required)
+# A list of Elasticsearch filters used for find events
+# These filters are joined with AND and nested in a filtered query
+# For more info: http://www.elasticsearch.org/guide/en/elasticsearch/reference/current/query-dsl.html
+filter:
+- query:
+    query_string:
+      query: "login:*"
+
+# (Required)
+# The alert is use when a match is found
+alert:
+- "email"
+alert_text: |
+    Something happened at {0}.
+    response: {1}
+    message: {2}
+alert_text_args: ["@timestamp", "response", "message"]
+alert_text_type: alert_text_only
+
+
+
+from_addr: elastalert@netvmf-tclseg01.epmtelco.com.co
+smtp_host: 10.158.108.23
+smtp_port: 25
+# (required, email specific)
+# a list of email addresses to send alerts to
+email:
+- "jean.santamaria@tigoune.com"
