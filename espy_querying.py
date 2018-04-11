@@ -1,6 +1,6 @@
 from elasticsearch import Elasticsearch
  
-es = Elasticsearch(['10.100.64.229:9200'])
+es = Elasticsearch(['192.168.20.1:9200'])
 res = es.search(index="test", doc_type="articles", body={"query": {"match": {"content": "fox"}}})
 print("%d documents found" % res['hits']['total'])
 for doc in res['hits']['hits']:
