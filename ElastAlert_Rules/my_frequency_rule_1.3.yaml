@@ -1,0 +1,25 @@
+# Alert when the rate of events exceeds a threshold
+
+es_host: 192.168.20.1
+es_port: 9200
+
+name: my frequency rule 2
+
+type: frequency
+
+index: logstash-*
+
+num_events: 10000
+
+timeframe:
+  minutes: 15
+
+filter:
+- term:
+    _type: "doc"
+
+alert:
+  - command
+
+command: ["/home/usuario/bash.sh"]
+
