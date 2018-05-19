@@ -1,0 +1,4 @@
+from elasticsearch import Elasticsearch
+es = Elasticsearch(['192.168.1.60:9200'])
+r = es.search(index="logstash-*",filter_path="hits.total", body={"query":{"bool":{"must":[{"match":{"task":"Logon"}},{"range":{"@timestamp":{"gte":"now-5m/m","lt":"now$
+count=r["hits"]["total"]
