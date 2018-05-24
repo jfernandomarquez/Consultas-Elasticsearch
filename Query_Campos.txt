@@ -1,0 +1,23 @@
+GET /logstash-*/_search?filter_path=hits.total, hits.hits._source.event_data.TargetUserName, hits.hits._source.@timestamp, hits.hits._source.event_data.IpAddress, hits.hits._source.event_data.IpPort
+{
+  "size": 50, 
+  "query": {
+    "bool": {
+      "must": [
+        {
+          "match": {
+            "short_message": "authentication failed"
+          }
+        },
+        {
+          "range": {
+            "@timestamp": {
+              "gte": "now-5m/m",
+              "lt": "now"
+            }
+          }
+        }
+      ]
+    }
+  }
+}
