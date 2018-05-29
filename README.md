@@ -16,7 +16,6 @@ this is hidden
 </details>
 
 
-This is a regular paragraph.
 
 <table>
     <tr>
@@ -24,4 +23,4 @@ This is a regular paragraph.
     </tr>
 </table>
 
-This is another regular paragraph.
+
