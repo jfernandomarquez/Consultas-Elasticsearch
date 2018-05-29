@@ -14,3 +14,14 @@ La idea es poder encontrar eventos extraños en los logs.
 <summary>"Click to expand"</summary>
 this is hidden
 </details>
+
+
+This is a regular paragraph.
+
+<table>
+    <tr>
+        <td>Foo</td>
+    </tr>
+</table>
+
+This is another regular paragraph.
