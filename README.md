@@ -9,3 +9,8 @@ Inicialmente se exploran diversas maneras de realizar Querie, utilizando:
 * elasticsearch-py
 
 La idea es poder encontrar eventos extraños en los logs.
+
+<details>
+<summary>"Click to expand"</summary>
+this is hidden
+</details>
