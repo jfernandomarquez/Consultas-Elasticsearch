@@ -52,3 +52,8 @@ def foo():
         return True
 ```
 
+```bash
+def foo():
+    if not bar:
+        return True
+```
