@@ -1,0 +1,20 @@
+POST /asa-*/_search
+{
+  "size": 100,
+  "query": {
+    "bool": {
+      "must": {
+        "exists": {
+          "field": "geoip.country_name"
+        }
+      },
+      "must_not": [
+        {
+          "match": {
+            "geoip.country_name": "Colombia"
+          }
+        }
+      ]
+    }
+  }
+}
