@@ -62,3 +62,6 @@ echo $VAL
 ```
 
 `num = int(input('Introduzca un numero: '))`
+
+
+[![blogger](http://icons.iconarchive.com/icons/carlosjj/google-jfk/128/blogger-icon.png)](https://jfernandomarquez.blogspot.com/) 
