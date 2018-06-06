@@ -8,6 +8,8 @@ Sentinl permite enviar correos electronicos en los cuales se pueden incluir dato
 
 Aqui se realiza la consulta a elasticsearch que van a hacer de datos de entrada.
 
+Ejemplo:
+
 ```json
 {
   "search": {
@@ -24,11 +26,24 @@ Aqui se realiza la consulta a elasticsearch que van a hacer de datos de entrada.
     }
   }
 }
-
 ```
 ### Condition
+
+La condicion es la que determina cuando se debe activar la acción.
+
+Ejemplo:
+```json
+{
+  "script": {
+    "script": "payload.hits.total > 0"
+  }
+}
+```
 ### Action
 
+La acción es lo que se realizara en caso de que se cumpla la condición. Para este caso en particula se utilza como acción un *email html* para poder personalizar el cuerpo de correo que se enviará para alertar.
+
+Ejemplo:
 
 ``` html
 
@@ -46,16 +61,6 @@ Dirección:
 Código Postal: 
 Ciudad – País
 </pre>
-
 ```
-
-[Aquí](https://www.w3schools.com/code/tryit.asp?filename=FS33JZY259P1) se puede observar como se queda el correo recibido. 
-
-
-
-
-
-## Acknowledgments
-
-* Gracias para cualquier persona cuyo código se usó
+Se puede observar como se queda el correo recibido [aquí](https://www.w3schools.com/code/tryit.asp?filename=FS33JZY259P1). 
 
