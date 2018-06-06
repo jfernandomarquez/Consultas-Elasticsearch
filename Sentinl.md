@@ -10,13 +10,8 @@ These instructions will get you a copy of the project up and running on your loc
 ### Condition
 ### Action
 
-```
-Give the example
-```
 
-And repeat
-
-```
+``` html
 
 <h1 style="color:#c00000;font-family:calibri;font-size:28px;text-align:center;">Anomalía Detectada</h1><pre style="color:#21356a;font-family::calibri;font-size:14px">Se tuvo un total de {{payload.hits.total}} eventos, esto prodría indicar que se esta generando un ataque.
 
