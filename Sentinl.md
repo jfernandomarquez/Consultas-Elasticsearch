@@ -30,6 +30,10 @@ Ciudad – País
 
 ```
 
+Aquí se puede observar como se queda el correo recibido: 
+
+https://www.w3schools.com/code/tryit.asp?filename=FS33JZY259P1
+
 ## Acknowledgments
 
 * Gracias para cualquier persona cuyo código se usó
