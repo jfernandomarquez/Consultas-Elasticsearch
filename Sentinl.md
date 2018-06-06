@@ -4,9 +4,28 @@ Sentinl permite enviar correos electronicos en los cuales se pueden incluir dato
 
 ## Entradas de watcher
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
-
 ### Input
+
+Aqui se realiza la consulta a elasticsearch que van a hacer de datos de entrada.
+
+```json
+{
+  "search": {
+    "request": {
+      "index": [
+        "logstash-*"
+      ],
+      "body": {
+        "size": 0,
+        "query": {
+          "match_all": {}
+        }
+      }
+    }
+  }
+}
+
+```
 ### Condition
 ### Action
 
