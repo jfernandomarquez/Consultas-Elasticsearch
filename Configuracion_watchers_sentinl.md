@@ -62,5 +62,5 @@ Código Postal:
 Ciudad – País
 </pre>
 ```
-Se puede observar como se queda el correo recibido [aquí](https://www.w3schools.com/code/tryit.asp?filename=FS33JZY259P1). 
+Se puede observar como se queda el correo recibido [aquí](https://www.w3schools.com/code/tryit.asp?filename=FS33JZY259P1), se le debe dar al boton verde run.
 
