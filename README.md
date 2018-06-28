@@ -47,7 +47,28 @@ Content in the first column | Content in the second column
 ```
 
 ```bash
-
+GET /logstash-*/_search?filter_path=hits.total
+{
+  "query": {
+    "bool": {
+      "must": [
+        {
+          "match": {
+            "task": "logon"
+          }
+        },
+        {
+          "range": {
+            "@timestamp": {
+              "gte": "now-5m/m",
+              "lt": "now"
+            }
+          }
+        }
+      ]
+    }
+  }
+}
 ```
 
 `num = int(input('Introduzca un numero: '))`
