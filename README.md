@@ -38,27 +38,79 @@ Content in the first column | Content in the second column
 
 
 ```javascript
-function fancyAlert(arg) {
-  if(arg) {
-    $.facebox({div:'#foo'})
+input {
+  jdbc {
+    type => "smnet"
+    jdbc_validate_connection => true
+    jdbc_driver_library => "/opt/logstash/drivers/postgresql-42.2.2.jar"
+    jdbc_driver_class => "org.postgresql.Driver"
+    jdbc_connection_string => "jdbc:postgresql://10.100.67.50:5432/smnet"
+    jdbc_user => "elkddl042318"
+    jdbc_password => "elk456"
+    statement => "SELECT * from audit_log WHERE n_id > :sql_last_value"
+    use_column_value => true
+    tracking_column => "n_id"
+    tracking_column_type => "numeric"
+#    sequel_opts => {login_timeout => 5 }
+    jdbc_paging_enabled => true
+    jdbc_page_size => 2000
+    schedule => "*/5 * * * *"
+#    record_last_run => true
+#    last_run_metadata_path => "/opt/logstash/logstash_jdbc_last_run.txt"
+#    clean_run => true 
   }
 }
 ```
 
 
 ```python
-## Introducir un numero por teclado y decir si es par o impar
-num = int(input('Introduzca un numero: '))
-ifnum % 2 == 0:
-print('Par')
-else:
-print('Impar')
+input {
+  jdbc {
+    type => "smnet"
+    jdbc_validate_connection => true
+    jdbc_driver_library => "/opt/logstash/drivers/postgresql-42.2.2.jar"
+    jdbc_driver_class => "org.postgresql.Driver"
+    jdbc_connection_string => "jdbc:postgresql://10.100.67.50:5432/smnet"
+    jdbc_user => "elkddl042318"
+    jdbc_password => "elk456"
+    statement => "SELECT * from audit_log WHERE n_id > :sql_last_value"
+    use_column_value => true
+    tracking_column => "n_id"
+    tracking_column_type => "numeric"
+#    sequel_opts => {login_timeout => 5 }
+    jdbc_paging_enabled => true
+    jdbc_page_size => 2000
+    schedule => "*/5 * * * *"
+#    record_last_run => true
+#    last_run_metadata_path => "/opt/logstash/logstash_jdbc_last_run.txt"
+#    clean_run => true 
+  }
+}
 ```
 
 ```bash
-#!/bin/bash 
-VAL=$((${1:-0} + ${2:-0} + ${3:-0})) 
-echo $VAL 
+input {
+  jdbc {
+    type => "smnet"
+    jdbc_validate_connection => true
+    jdbc_driver_library => "/opt/logstash/drivers/postgresql-42.2.2.jar"
+    jdbc_driver_class => "org.postgresql.Driver"
+    jdbc_connection_string => "jdbc:postgresql://10.100.67.50:5432/smnet"
+    jdbc_user => "elkddl042318"
+    jdbc_password => "elk456"
+    statement => "SELECT * from audit_log WHERE n_id > :sql_last_value"
+    use_column_value => true
+    tracking_column => "n_id"
+    tracking_column_type => "numeric"
+#    sequel_opts => {login_timeout => 5 }
+    jdbc_paging_enabled => true
+    jdbc_page_size => 2000
+    schedule => "*/5 * * * *"
+#    record_last_run => true
+#    last_run_metadata_path => "/opt/logstash/logstash_jdbc_last_run.txt"
+#    clean_run => true 
+  }
+}
 ```
 
 `num = int(input('Introduzca un numero: '))`
