@@ -39,18 +39,8 @@ Content in the first column | Content in the second column
 
 ```javascript
 {
-  "search": {
-    "request": {
-      "index": [
-        "logstash-*"
-      ],
-      "body": {
-        "size": 0,
-        "query": {
-          "match_all": {}
-        }
-      }
-    }
+  "script": {
+    "script": "payload.hits.total > 0"
   }
 }
 ```
