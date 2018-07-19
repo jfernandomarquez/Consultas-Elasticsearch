@@ -1,4 +1,4 @@
-POST /windows-*/_search?size=1
+POST /logstash-*/_search?size=0
 {
   "query": {
     "bool": {
