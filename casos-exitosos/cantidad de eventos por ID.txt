@@ -1,0 +1,26 @@
+POST /windows-*/_search?size=1
+{
+  "query": {
+    "bool": {
+      "must": [
+        {
+          "match_all": {}
+        },
+        {
+          "range": {
+            "@timestamp": {
+              "gte": "now-1m"
+            }
+          }
+        }
+      ]
+    }
+  },
+  "aggs": {
+    "cantidad de eventos por ID del evento": {
+      "terms": {
+        "field": "event_id"
+      }
+    }
+  }
+}
