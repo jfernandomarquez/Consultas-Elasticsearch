@@ -24,3 +24,35 @@ POST /logstash-*/_search?size=0
     }
   }
 }
+
+
+POST /windows-*/_search?size=0
+{
+  "query": {
+    "bool": {
+      "must": [
+        {
+          "match": {
+            "short_message": "pre-authentication failed"
+          }
+        },
+        {
+          "range": {
+            "@timestamp": {
+              "gte": "now-1h",
+              "lt": "now"
+            }
+          }
+        }
+      ]
+    }
+  },
+  "aggregations": {
+    "usuarios con mas intentos fallidos": {
+      "significant_text": {
+        "field": "process_id",
+        "size": 5
+      }
+    }
+  }
+}
