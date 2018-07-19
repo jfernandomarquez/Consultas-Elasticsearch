@@ -56,3 +56,15 @@ POST /windows-*/_search?size=0
     }
   }
 }
+
+PUT /windows-*/_mapping/doc
+{
+   "doc": {
+      "properties": {
+        "TargetUserName": {
+          "type": "text",
+          "fielddata": true
+        }
+      }
+   }
+}
