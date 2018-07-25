@@ -1,6 +1,31 @@
 # ELK-Scripts
 Scripts para consultar los logs almacenados en ElasticSearch
 
+```javascript
+GET /logstash-*/_search
+{
+  "query": {
+    "bool": {
+      "must": [
+        {
+          "match": {
+            "event_data.TargetUserName": "username"
+          }
+        },
+        {
+          "range": {
+            "@timestamp": {
+              "gte": "2018-06-29",
+              "lte": "2018-06-30"
+            }
+          }
+        }
+      ]
+    }
+  }
+}
+```
+
 Inicialmente se exploran diversas maneras de realizar Querie, utilizando:
 
 * python
